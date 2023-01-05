@@ -4,10 +4,14 @@ import java.util.Scanner;
 public class RockPaperScissor {
 
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+	
+		while(true) {
+		
 		String[] rps = { "r", "p", "s"};
 		String computerMove = rps[new Random().nextInt(rps.length)];
 
-		Scanner scanner = new Scanner(System.in);
+
 		String playerMove;
 
 		while(true) {
@@ -52,11 +56,18 @@ public class RockPaperScissor {
 			if(computerMove.equals("p")) {
 				System.out.println("You win! ");
 
-			}
-			else if (computerMove.equals("r")) {
+			}else if (computerMove.equals("r")) {
 				System.out.println("You lose!");
+
 			}
 		}
-		}
+		System.out.println("Play again? (y/n)");
+		String playAgain = scanner.nextLine();
 
+		if(!playAgain.equals("y")){
+			break;
+		}
+	}
+
+}
 }
